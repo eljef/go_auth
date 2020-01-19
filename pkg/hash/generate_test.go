@@ -91,9 +91,9 @@ func Test_genHash(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			genHash(tt.data, tt.info)
+			generateHash(tt.data, tt.info)
 			if !reflect.DeepEqual(tt.info.Hash, tt.want) {
-				t.Errorf("genHash() got = %v, want = %v", tt.info.Hash, tt.want)
+				t.Errorf("generateHash() got = %v, want = %v", tt.info.Hash, tt.want)
 			}
 		})
 	}

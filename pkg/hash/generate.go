@@ -23,8 +23,8 @@ func encodeHash(info *Info) {
 		info.Function, info.Version, info.Memory, info.Iterations, info.Threads, b64salt, b64pass)
 }
 
-// genHash hashes data using the Argon2id variant
-func genHash(data string, info *Info) {
+// generateHash hashes data using the Argon2id variant
+func generateHash(data string, info *Info) {
 	// Per documentation for bytes.Buffer.WriteString(), err is always nil, so it is safe to ignore error returns
 	// on this call.
 
@@ -79,7 +79,7 @@ func Generate(data string, defaults Config) (Info, error) {
 		return Info{}, err
 	}
 
-	genHash(data, &ret)
+	generateHash(data, &ret)
 	encodeHash(&ret)
 
 	return ret, nil
