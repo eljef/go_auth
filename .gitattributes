@@ -1,0 +1,9 @@
+# Treat all files as text.
+# Do not let git determine line endings.
+# Use an editor that properly terminates lines with a `\n`.
+# gofmt should fix things that slip through.
+
+# Use `make gofmt` before committing
+# Use `make lint` before committing
+
+* text
