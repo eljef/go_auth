@@ -2,7 +2,6 @@
 test_missing_coverage test_race
 
 NULL :=
-VERSION := 0.0.1
 
 # all runs help
 all : help
