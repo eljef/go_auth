@@ -90,11 +90,11 @@ func decodeHashConfig(configInfo string, info *Info) error {
 
 		switch confParts[0] {
 		case "m":
-			info.Memory, err = decodeHashConfigSection(confParts[1], "invalid memory configuration")
+			info.Memory, err = decodeHashConfigUint32(confParts[1], "invalid memory configuration")
 		case "p":
 			info.Threads, err = decodeHashConfigThreads(confParts[1])
 		case "t":
-			info.Iterations, err = decodeHashConfigSection(confParts[1], "invalid iterations/time configuration")
+			info.Iterations, err = decodeHashConfigUint32(confParts[1], "invalid iterations/time configuration")
 		default:
 			err = errors.New(errInvalidConfig)
 		}
@@ -111,8 +111,8 @@ func decodeHashConfig(configInfo string, info *Info) error {
 	return nil
 }
 
-// decodeHashConfigSection validates the provided configuration part information in a hash
-func decodeHashConfigSection(sectionInfo string, errorStr string) (uint32, error) {
+// decodeHashConfigUint32 validates the provided configuration part information in a hash
+func decodeHashConfigUint32(sectionInfo string, errorStr string) (uint32, error) {
 	ret, err := strconv.ParseUint(sectionInfo, 10, 32)
 	if err != nil {
 		return 0, errors.New(errorStr)

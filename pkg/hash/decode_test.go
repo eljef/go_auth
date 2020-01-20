@@ -129,7 +129,7 @@ func Test_decodeHashConfig(t *testing.T) {
 	}
 }
 
-func Test_decodeHashConfigSection(t *testing.T) {
+func Test_decodeHashConfigUint32(t *testing.T) {
 	tests := []struct {
 		name    string
 		data    string
@@ -143,13 +143,13 @@ func Test_decodeHashConfigSection(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := decodeHashConfigSection(tt.data, "test error message")
+			got, err := decodeHashConfigUint32(tt.data, "test error message")
 			if (err != nil) != tt.wantErr {
-				t.Errorf("decodeHashConfigSection() err = %v, wantErr %v", err, tt.wantErr)
+				t.Errorf("decodeHashConfigUint32() err = %v, wantErr %v", err, tt.wantErr)
 				return
 			}
 			if got != tt.want {
-				t.Errorf("decodeHashConfigSection() got = %v, want = %v", got, tt.want)
+				t.Errorf("decodeHashConfigUint32() got = %v, want = %v", got, tt.want)
 			}
 		})
 	}
