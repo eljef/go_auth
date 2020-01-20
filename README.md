@@ -1,12 +1,12 @@
-# ElJef Auth
+# Auth
 
-ElJef Auth is a package to provide authentication support. It provides
-hashing, password validation, and token generation and storage
-functionality.
+Auth is a package that provides authentication and authorization
+support. It provides hashing, password validation, and token
+generation functionality.
 
 ## Project Maintenance
 
-The ElJef Auth project is maintained with standard golang utilities,
+This project is maintained with standard golang utilities,
 controlled via make. To see all Makefile targets, simply run
 `make help` from the root source directory of the project.
 
