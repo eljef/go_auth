@@ -99,6 +99,7 @@ func Test_genHash(t *testing.T) {
 	}
 }
 
+// nolint:gocognit
 func Test_genSalt(t *testing.T) {
 	tests := []struct {
 		name    string
@@ -131,6 +132,7 @@ func Test_genSalt(t *testing.T) {
 	}
 }
 
+// nolint:gocognit
 func Test_Generate(t *testing.T) {
 	argon2i := GetConfigDefaults()
 	argon2i.Function = Argon2I

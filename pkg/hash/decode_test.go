@@ -2,6 +2,7 @@
 // Use of this source code is governed by a license
 // that can be found in the LICENSE file.
 
+// nolint:dupl
 package hash
 
 import (
@@ -88,6 +89,7 @@ func Test_decodeHashBytes(t *testing.T) {
 	}
 }
 
+// nolint:gocognit
 func Test_decodeHashConfig(t *testing.T) {
 	tests := []struct {
 		name           string

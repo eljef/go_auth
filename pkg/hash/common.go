@@ -70,6 +70,8 @@ func isValidVersion(version int) bool {
 }
 
 // validateConfig validates that the provided config can be used.
+// nolint:cyclop,gocyclo,gocognit
+// unfortunately, checking the config takes some cycles
 func validateConfig(config *Config) error {
 	if !isValidVersion(config.Version) {
 		return fmt.Errorf("invalid or unsupported version provided: %d", config.Version)

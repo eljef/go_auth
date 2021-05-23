@@ -74,6 +74,8 @@ func decodeHashBytes(data string, errorStr string) ([]byte, uint32, error) {
 }
 
 // decodeHashConfig validates the provided configuration information in a hash
+// nolint:cyclop,gocyclo,gocognit
+// decoding does take some cycles to run
 func decodeHashConfig(configInfo string, info *Info) error {
 	var err error
 
@@ -121,7 +123,7 @@ func decodeHashConfigUint32(sectionInfo string, errorStr string) (uint32, error)
 	return uint32(ret), nil
 }
 
-//decodeHashConfigThreads validates the provided threads configuration information in a hash
+// decodeHashConfigThreads validates the provided threads configuration information in a hash
 func decodeHashConfigThreads(threadInfo string) (uint8, error) {
 	ret, err := strconv.ParseUint(threadInfo, 10, 8)
 	if err != nil {
