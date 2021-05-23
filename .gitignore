@@ -1,6 +1,5 @@
-.idea
-
 /vendor/
-*~
-*.swp
-*.swo
+.*
+!.gitattributes
+!.gitignore
+!.golangci.toml
