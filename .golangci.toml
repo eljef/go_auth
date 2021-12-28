@@ -3,7 +3,7 @@
 
 [linters]
   enable = ['bodyclose', 'cyclop', 'dupl', 'errorlint', 'gochecknoinits', 'gocognit', 'goconst', 'gocritic', 'gocyclo',
-            'goimports', 'golint', 'gosec', 'nakedret', 'unconvert', 'unparam']
+            'goimports', 'gosec', 'nakedret', 'revive', 'unconvert', 'unparam']
 
 [linters-settings]
   [linters-settings.dupl]
