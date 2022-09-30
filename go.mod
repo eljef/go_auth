@@ -2,6 +2,6 @@ module git.eljef.me/go/auth
 
 go 1.17
 
-require golang.org/x/crypto v0.0.0-20220722155217-630584e8d5aa
+require golang.org/x/crypto v0.0.0-20220926161630-eccd6366d1be
 
-require golang.org/x/sys v0.0.0-20220803195053-6e608f9ce704 // indirect
+require golang.org/x/sys v0.0.0-20220928140112-f11e5e49a4ec // indirect
