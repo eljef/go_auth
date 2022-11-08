@@ -1,6 +1,4 @@
-// Copyright (c) 2020 Jef Oliver. All rights reserved.
-// Use of this source code is governed by a license
-// that can be found in the LICENSE file.
+// # SPDX-License-Identifier: BSD-2-Clause
 
 // nolint:dupl
 package hash
