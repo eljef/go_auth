@@ -1,4 +1,4 @@
-module git.eljef.me/go/auth
+module eljef.dev/go/auth
 
 go 1.17
 
