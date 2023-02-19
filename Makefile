@@ -18,7 +18,6 @@ help :
 	$(info $(NULL)	deps_update		- update the dependencies for this project)
 	$(info $(NULL)	gofmt			- runs gofmt, formatting all project source files)
 	$(info $(NULL)	lint_clean		- cleans the lint tools cache)
-	$(info $(NULL)	lint_install		- installs linting tools for this project on this system)
 	$(info $(NULL)	lint_run		- runs linting tools for this project)
 	$(info $(NULL)	test			- run tests for this project)
 	$(info $(NULL)	test_clean		- runs cleanup of the test cache)
