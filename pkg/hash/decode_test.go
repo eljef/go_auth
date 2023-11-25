@@ -110,7 +110,8 @@ func Test_decodeHashConfig(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if err := decodeHashConfig(tt.data, &tt.info); (err != nil) != tt.wantErr {
+			info := tt.info
+			if err := decodeHashConfig(tt.data, &info); (err != nil) != tt.wantErr {
 				t.Errorf("decodeHashConfig() err = %v, wantErr %v", err, tt.wantErr)
 				return
 			}

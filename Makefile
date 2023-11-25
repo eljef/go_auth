@@ -1,4 +1,4 @@
-.PHONY: help all deps_get deps_update gofmt lint_clean lint_install lint_run \
+.PHONY: help all deps_get deps_update deps_tidy gofmt lint_clean lint_run \
 test test_clean test_coverage test_race
 
 NULL :=
@@ -15,6 +15,7 @@ help :
 	$(info ** Available Targets **)
 	$(info $(NULL))
 	$(info $(NULL)	deps_get		- download the dependencies for this project to the vendor folder)
+	$(info $(NULL)	deps_tidy		- remove old and duplicate dependencies from go.sum)
 	$(info $(NULL)	deps_update		- update the dependencies for this project)
 	$(info $(NULL)	gofmt			- runs gofmt, formatting all project source files)
 	$(info $(NULL)	lint_clean		- cleans the lint tools cache)
@@ -38,6 +39,12 @@ deps_update :
 	$(info $(NULL))
 	go get -t -u ./...
 	go mod vendor
+	@echo
+
+# deps_tidy updates dependencies for the project
+deps_tidy :
+	$(info $(NULL))
+	go mod tidy
 	@echo
 
 # gofmt runs gofmt on directories
