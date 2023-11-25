@@ -41,7 +41,7 @@ deps_update :
 	go mod vendor
 	@echo
 
-# deps_tidy updates dependencies for the project
+# deps_tidy cleans dependencies for the project
 deps_tidy :
 	$(info $(NULL))
 	go mod tidy
