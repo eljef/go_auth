@@ -111,20 +111,21 @@ func Test_decodeHashConfig(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			info := tt.info
-			if err := decodeHashConfig(tt.data, &info); (err != nil) != tt.wantErr {
+			err := decodeHashConfig(tt.data, &info)
+			if (err != nil) != tt.wantErr {
 				t.Errorf("decodeHashConfig() err = %v, wantErr %v", err, tt.wantErr)
 				return
 			}
-			if tt.info.Iterations != tt.wantIterations {
-				t.Errorf("decodeHashConfig() iterations = %d, want = %d", tt.info.Iterations, tt.wantIterations)
+			if info.Iterations != tt.wantIterations {
+				t.Errorf("decodeHashConfig() iterations = %d, want = %d, err=%v", tt.info.Iterations, tt.wantIterations, err)
 				return
 			}
-			if tt.info.Memory != tt.wantMemory {
-				t.Errorf("decodeHashConfig() memory = %d, want = %d", tt.info.Memory, tt.wantMemory)
+			if info.Memory != tt.wantMemory {
+				t.Errorf("decodeHashConfig() memory = %d, want = %d, err=%v", tt.info.Memory, tt.wantMemory, err)
 				return
 			}
-			if tt.info.Threads != tt.wantThreads {
-				t.Errorf("decodeHashConfig() memory = %d, want = %d", tt.info.Threads, tt.wantThreads)
+			if info.Threads != tt.wantThreads {
+				t.Errorf("decodeHashConfig() memory = %d, want = %d, err=%v", tt.info.Threads, tt.wantThreads, err)
 			}
 		})
 	}
