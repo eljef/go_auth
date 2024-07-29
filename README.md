@@ -1,8 +1,8 @@
 # Auth
 
-Auth is a package that provides authentication and authorization
-support. It provides hashing, password validation, and token
-generation functionality.
+Auth is a package that provides authentication and authorization support. It
+provides basic encryption, hashing, password validation, and token generation
+functionality.
 
 ## Project Maintenance
 
@@ -11,6 +11,12 @@ controlled via make. To see all Makefile targets, simply run
 `make help` from the root source directory of the project.
 
 ## Packages
+
+### Crypt
+
+The crypt package provides functionality to encrypt and decrypt data using
+AES-256-GCM. This is useful for encrypting data to be temporarily stored in a
+cookie during OAUTH transactions.
 
 ### Hash
 
