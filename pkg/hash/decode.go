@@ -31,6 +31,7 @@ import (
 	"encoding/base64"
 	"errors"
 	"fmt"
+	"math"
 	"strconv"
 	"strings"
 )
@@ -82,18 +83,19 @@ func Decode(data string) (Info, error) {
 	return ret, nil
 }
 
+// decodeHashBytes decodes the given hash string to a byte slice via base64 decoding
 func decodeHashBytes(data string, errorStr string) ([]byte, uint32, error) {
 	dataBytes, err := base64.RawStdEncoding.DecodeString(data)
 	if err != nil {
 		return nil, 0, errors.New(errorStr)
 	}
 
-	dataLength := uint32(len(dataBytes))
-	if dataLength == 0 {
-		return nil, 0, errors.New(errorStr)
+	dLen := len(dataBytes)
+	if dLen > 0 && dLen <= math.MaxUint32 {
+		return dataBytes, uint32(dLen), nil
 	}
 
-	return dataBytes, dataLength, nil
+	return nil, 0, errors.New(errorStr)
 }
 
 // decodeHashConfig validates the provided configuration information in a hash
