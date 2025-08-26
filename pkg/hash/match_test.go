@@ -1,6 +1,6 @@
 /* SPDX-License-Identifier: BSD-2-Clause
 
-Copyright (c) 2020-2024, Jef Oliver
+Copyright (c) 2020-2025, Jef Oliver
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification,
